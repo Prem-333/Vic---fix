@@ -55,7 +55,7 @@ The application is structured into a strictly modular architecture to separate t
 
 ```mermaid
 graph TD
-    subgraph UI Layer
+    subgraph UILayer [UI Layer]
         APP[app.py : Main Window]
         UI[ui_components.py : Shared Widgets]
         
@@ -74,12 +74,12 @@ graph TD
         T6 -.-> UI
     end
 
-    subgraph Backend
+    subgraph BackendLayer [Backend]
         MP[media_processor.py : FFmpeg Orchestrator]
         SE[sync_engine.py : Cross-Correlation Math]
     end
 
-    UI Layer --> MP
+    UILayer --> MP
     T1 --> SE
 ```
 
