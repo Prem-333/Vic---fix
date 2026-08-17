@@ -41,6 +41,12 @@ class VicFixApp(ctk.CTk):
         y = (screen_height // 2) - (window_height // 2)
         self.geometry(f"{window_width}x{window_height}+{x}+{y}")
         self.minsize(900, 700)
+        
+        # Force to front
+        self.attributes('-topmost', True)
+        self.update()
+        self.attributes('-topmost', False)
+        self.lift()
 
         # Set dark theme overrides globally
         ctk.set_appearance_mode("dark")

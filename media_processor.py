@@ -39,7 +39,7 @@ def get_secure_env() -> dict:
     """Return a strictly sanitized environment dictionary for subprocesses."""
     # Only allow absolutely critical system variables to prevent DLL hijacking
     # and environment injection.
-    safe_keys = {"PATH", "SystemRoot", "SystemDrive", "TEMP", "TMP", "USERPROFILE"}
+    safe_keys = {"PATH", "SYSTEMROOT", "SYSTEMDRIVE", "TEMP", "TMP", "USERPROFILE"}
     safe_env = {k: v for k, v in os.environ.items() if k.upper() in safe_keys}
     return safe_env
 
